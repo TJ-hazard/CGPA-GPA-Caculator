@@ -1,0 +1,204 @@
+:root {
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: #1f2937;
+  width: 100vw;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-course {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  border: black;
+  background-color: gray;
+}
+
+/*  */
+/* General table reset */
+
+.table-container {
+  overflow-x: auto; /* Enables horizontal scrolling when content overflows */
+  /* Optional: Set a max-width for the container if needed */
+  max-width: 100%;
+}
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Table borders */
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+/* Table header */
+th {
+  background-color: #1f2937; /* green header */
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* Table cells */
+td {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+/* Row hover effect */
+
+/* Footer row (totals) */
+tfoot td {
+  font-weight: bold;
+  background-color: #f1f1f1;
+  padding: 12px;
+  border: 3px solid #ddd;
+}
+
+/*  */
+
+.custom-select {
+  appearance: none; /* removes default browser arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #1f2937; /* solid dark gray */
+  color: #e5e7eb; /* light gray text */
+  font-size: 15px;
+  border: 1px solid #374151; /* subtle border */
+  border-radius: 8px;
+  padding: 10px 40px 10px 12px;
+  outline: none;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect */
+.custom-select:hover {
+  background-color: #2d3748; /* slightly lighter gray */
+}
+
+/* Focus effect */
+.custom-select:focus {
+  border-color: #3b82f6; /* subtle blue outline */
+}
+
+/* Container for positioning arrow */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Custom arrow */
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #9ca3af; /* muted gray */
+  pointer-events: none; /* allows clicking through */
+}
+
+/* Responsive table for small screens */
+@media (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* Hide table header on small screens */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+}
+
+.footer {
+  background: #1f2937; /* dark gray background */
+  color: #d1d5db; /* light gray text */
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  height: 120px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer a {
+  color: #9ca3af;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #3b82f6; /* subtle blue hover */
+}
+
+.version {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6b7280; /* muted gray */
+}
